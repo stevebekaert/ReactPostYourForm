@@ -1,12 +1,31 @@
 import React from 'react';
 import './App.css';
-import ContactForm from './components/ContactForm';
+import MovieForm from './components/MovieForm';
+import MessageSuccess from './components/MessageSuccess'
 
 class App extends React.Component {
+  state = {
+    sent: false
+  }
+
+  onSubmit = (e) => {
+    this.setState({
+      sent: true
+    })
+    e.preventDefault()
+  }
+
+  reset = () => {
+    this.setState({
+      sent: false
+    })
+  }
+
   render() {
   return (
     <div className="App">
-      <ContactForm />
+      <MovieForm onSubmit={this.onSubmit} onClick={this.reset}/>
+      {this.state.sent && <MessageSuccess props={"Non"} />}
     </div>
   );
   }

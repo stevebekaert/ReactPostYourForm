@@ -28,6 +28,6 @@
   padding: 20px;
 }
 
-.form-zone input[type="text"], input[type="submit"], label {
-  margin-top: 10px;
+.form-zone input[type="text"], input[type="submit"], textarea {
+  margin-bottom: 10px;
 }
